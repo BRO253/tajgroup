@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styl.css">
+    <script src="navbar_1.js"></script>
+    <script src="mobile_control.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <navbar-elem></navbar-elem>
+            <mobile-ui></mobile-ui>
+        </div>
+        <div class="top_text">
+            <span>Учебные заведения</span>
+        </div>
+        <table class="iksweb container">
+            <tbody>
+                <tr>
+                    <td class="data"><span class="tooldtip" data-title="Введите даду началу поиска"><a href="#">ДАТА ОТ <span class="green">12.05.2023</span></a></span></td>
+                    <td class="data"><span class="tooldtip_2" data-title_2="Введите даду конца поиска"><a href="#">ДАТА ДО <span class="green"> 23.08.2023</span></a></span></td>
+                    <td><span class="tooldtip_3" data-title_3="Добавте новую вакансию"><span class="brown"><a href="#" id="addNewRegion">+ ADD A NEW ONE</a></span></span></td>
+                    <td><span class="tooldtip_4" data-title_4="Добавте новую вакансию"><img src="cross.svg" alt="" style="width: 24px; height: 24px;"> <span class="pos"><a href="#">DESELECT</a></span></span></td>
+                    <td><span class="tooldtip_5" data-title_5="Нашлось:"><img src="check-mark.png" alt=""><span class="total"> <a href="#">IN TOTAL:</a> <span class="green"><a href="#">298732</a></span></span></span></td>
+                    <td><span class="tooldtip_6" data-title_6="Экспортировать"><img src="export.png" alt="" class="ex-img"> <span class="ex-xy"><a href="#">EXPORT</a></span></span></td>
+                    <td><span class="tooldtip_7" data-title_7="Импортировать"><img src="import.png" alt="" class="imp-img"><span class="im-xy"><a href="#">IMPORT</a></span></span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="select">
+                <div class="select-one container">
+                    <div>
+                        <h2 class="h2">Тип учебного заведения</h2>
+                        <div class="select-container mySelect" id="mySelect" onclick="toggleOptions()"> 
+                            <div class="selected-option">Высшие-специальные учебные заведения<span id="checkboxCount" class="check" style="display: inline;" >(Выбрано: 0)</span><img src="Vector.png" alt="Картинка" class="vec" id="vect"> <!-- Добавлено сюда --></div>
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="options-list">
+                            <label class="custom-checkbox">
+                                По всем
+                                <input type="checkbox" name="type" class="right-max" value="all">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="custom-checkbox">
+                                Школы, гимназии
+                                <input type="checkbox" name="type" value="schools" class="right-max" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="custom-checkbox">
+                                Средние-специальные учебные заведения
+                                <input type="checkbox" name="type" value="middle" class="right-max">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="custom-checkbox">
+                                Высшие-специальные учебные заведения
+                                <input type="checkbox" name="type" value="higher" class="right-max">
+                                <span class="checkmark"></span>
+                            </label>
+                            <button class="selector-button">Выбрать</button>
+                        </div>
+                        
+                    </div>
+                </div>            
+                <div class="select-two container">
+                    <label class="region" for="region-input">Регион учебных заведений</label>
+                    <div class="input-wrapper">
+                        <input class="b" placeholder="Выбрать регион" id="region-input" id="image-container" id="region-input1" type="text">
+                        <img src="Vector.png" alt="Очистить" id="clearButton" class="a">      
+                    </div>
+                    <img src="554.png" alt="" id="str">
+                    <div class="options-list" id="options-list">
+                        <!-- Options will be generated by JavaScript -->
+                    </div>
+                </div>                          
+            </div>
+        </div>
+        <div class="pagination container" style="display: none;">
+            <div class="input_div">
+                <span class="page_span">Укажите страницу</span>
+                <input type="text" min="1" placeholder="1">
+                <button>Go</button>
+            </div>
+            <div class="numbers_div">
+                <a href="#" class="disabled" id="dis-one">«</a>
+                <a href="#" class="disabled" id="first">First</a>
+                <div id="page-links">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">11</a>
+                </div>
+                <a href="#" id="Ttx">…</a>
+                <a href="#" id="twent-three">23</a>
+                <a href="#" id="last">Next</a>
+                <a href="#" id="next">»</a>
+            </div>
+        </div>
+        <div class="text_or_betton container">
+            <div class="text_a">
+                <span>Альтернативные названия учебных заведений</span>
+            </div>
+            <div class="button_or">
+                <div>
+                    <button>Все учебные заведения</button>
+                </div>
+                <div>
+                    <button>Сщкращенные юр. формы</button>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <script src="main.js"></script>
+    <script src="js_two.js"></script>
+</body>
+</html>
